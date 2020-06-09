@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+
+<body>
+
+  <h1>Controls</h1>
+
+  <!-- Button -->
+  <button id="button-grow">Grow !</button>
+
+  <!-- JavaScripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/javascripts/ControlsSocket.js"></script>
+  <script src="/javascripts/ControlsEvents.js"></script>
+  <script>
+    const socket = new ControlsSocket();
+    const events = new ControlsEvents(socket);
+  </script>
+</body>
+
+</html>
