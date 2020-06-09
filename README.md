@@ -1,4 +1,4 @@
-# l3_projet_example
+# l3_projet_exemple
 
 Example source files.
 
@@ -6,10 +6,10 @@ Example source files.
 
 ```sh
 # clone project
-git clone https://gitlab.com/l3_projet_2020/l3_projet_example.git
+git clone https://gitlab.com/l3_projet_2020/l3_projet_exemple.git
 
 # install
-cd l3_projet_example/
+cd l3_projet_exemple/
 npm install
 
 # serve at 'localhost:3000'
