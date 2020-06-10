@@ -9,6 +9,6 @@ class GameSocket {
     this.canvas = canvas;
     // Socket communications
     this.socket = io();
-    this.socket.on('update', (players) => this.canvas.redraw(players));
+    this.socket.on('update', (data) => this.canvas.redraw(data));
   }
 }
