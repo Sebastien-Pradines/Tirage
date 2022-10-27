@@ -28,5 +28,7 @@
     border-radius: 4px;
     margin: 0 auto;
     margin-bottom: 3px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
