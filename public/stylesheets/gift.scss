@@ -34,7 +34,7 @@ body {
 
 	&.open {
 		.lid {
-			transform: translateY(-200%) rotate(5deg);
+			transform: translateX(10%) translateY(-200%) rotate(15deg);
 		}
 
 		.contents {
