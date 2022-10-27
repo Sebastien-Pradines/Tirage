@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="/stylesheets/styleTest.css">
+</head>
+
+<body>
+
+  <h1>Test</h1>
+
+  <div id="nameDiv">
+    <input type="text" id="name" name="name">
+    <button id="nameButton">Valider</button>
+  </div>
+  <div id="zone" width="600" height="600" class="hidden">
+    <div id="last"></div>
+  </div>
+  <button id="start">Start</button>
+  <button id="result">Resultat</button>
+
+  <!-- JavaScripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/javascripts/Tirage.js"></script>
+  <script src="/javascripts/TirageJoueur.js"></script>
+  <script>
+    const canvas = new Tirage();
+    const socket = new TirageJoueur(canvas);
+  </script>
+</body>
+
+</html>

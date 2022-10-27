@@ -1,0 +1,32 @@
+.hidden{
+    display: none !important;
+}
+
+#nameDiv{
+    border: 2px solid;
+    width: 40%;
+    height: 200px;
+    margin: 0 auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#zone{
+    border: 2px solid;
+    height: 500px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.joueur{
+    height: 30px;
+    border: 1px solid;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-bottom: 3px;
+    text-align: center;
+}
