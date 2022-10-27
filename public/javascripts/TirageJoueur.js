@@ -28,11 +28,11 @@
       document.getElementById('zone').classList.remove("hidden");
     }
   
-    start(player) {
+    start() {
       this.socket.emit('start');
     }
 
-    resultat(player){
+    resultat(){
       this.socket.emit('result');
     }
 

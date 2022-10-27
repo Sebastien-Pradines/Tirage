@@ -5,22 +5,31 @@
 <head>
   <title>Home</title>
   <link rel="stylesheet" href="/stylesheets/styles.css">
+  <link rel="stylesheet" href="/stylesheets/gift.css">
 </head>
 
 <body>
-
-  <h1>Game</h1>
-
-  <!-- Canvas -->
-  <canvas id="game-canvas" width="600" height="600"></canvas>
-
-  <!-- JavaScripts -->
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/javascripts/GameCanvas.js"></script>
-  <script src="/javascripts/GameSocket.js"></script>
+  <div class="board">
+    <div class="box" id="box">
+      <div class="lid"><span class="ribbon"></span>&nbsp;</div>
+      <div class="body">&nbsp;</div>
+      <div class="contents">Coucou</div>
+    </div>
+  
+    <button id="button">Open</button>
+  </div>
   <script>
-    const canvas = new GameCanvas();
-    const socket = new GameSocket(canvas);
+    const button = document.getElementById('button');
+    const box = document.getElementById('box');
+
+    let open = false;
+
+    button.addEventListener('click', (event) => {
+      box.classList.toggle('open');
+      event.target.innerText = (open ? 'Open' : 'Close' );
+      open = !open;
+    });
+
   </script>
 </body>
 
