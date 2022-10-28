@@ -48,6 +48,11 @@ function io(server) {
 
     socket.on('changeName', (name) => tirage.changeName(socket.id, name));
 
+    socket.on('idValid', () => {
+      console.log(tirage.isValid());
+      callback(tirage.isValid());
+    });
+
   });
 
   function update(msg){
