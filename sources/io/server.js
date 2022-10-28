@@ -37,7 +37,10 @@ function io(server) {
       update("add");
     });
 
-    socket.on('start', () => tirage.start());
+    socket.on('start', () => {
+      tirage.start();
+      io.emit('afficheCadeau');
+    });
 
     socket.on('result', () => {
       io.to(socket.id).emit('showResult', tirage.result(socket.id));

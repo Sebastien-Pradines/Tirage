@@ -7,15 +7,16 @@
  class TirageJoueur {
     constructor() {
       this.socket = io();
-      //this.socket.emit('connexion');
-      
 
+      if(document.querySelector('#start'))
+      {
+        this.startB = document.querySelector('#start');
+        this.startB.onclick = (event) => this.start(event);
+      }
       this.nameB = document.querySelector('#nameButton');
-      this.startB = document.querySelector('#start');
-      this.resultatB = document.querySelector('#result');
+      this.resultatB = document.querySelector('#button');
 
       this.nameB.onclick = (event) => this.changeName(event);
-      this.startB.onclick = (event) => this.start(event);
       this.resultatB.onclick = (event) => this.resultat(event);
 
       this.socket.on('showResult', (data) => this.showResult(data));
@@ -33,11 +34,12 @@
     }
 
     resultat(){
+      console.log("1");
       this.socket.emit('result');
     }
 
     showResult(data){
-      alert(data);
+      document.getElementById("resultat").innerText = data;
     }
   }
   

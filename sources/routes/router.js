@@ -28,4 +28,8 @@ router.get('/test', function(req, res, next) {
   res.sendFile('html/test.html', { root: __public });
 });
 
+router.get('/client', function(req, res, next) {
+  res.sendFile('html/client.html', { root: __public });
+});
+
 module.exports = router;
