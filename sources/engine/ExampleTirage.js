@@ -15,24 +15,12 @@ class Tirage {
     this.name = name;
     this.players = {};
     this.playersIdList = [];
+    this.valid = true;
   }
 
   connexion(id, name) {
     this.players[id] = new ExampleJoueur(id, name);
-    const test = Object.values(this.players);
-    this.playersIdList.push(id);
-    // console.log(test[0].id);
-    // console.log(Object.values(this.players[test[0].id]));
-    
-    // console.log(test[0]);
-
-    // var arr1 = Object.values(this.players);
-    // arr1.sort(function() { return 0.5 - Math.random();});
-
-    // Object.values(this.players).forEach(player => player.name = arr1.name);
-    // this.players[id].affectOther("e");
-    //console.log(Object.values(this.players));
-    console.log(this.players);
+    this.playersIdList.push(id)
   }
 
   afficher(id) {
@@ -49,33 +37,22 @@ class Tirage {
   }
 
   start(){
-    // -- Version 1 --
-    // var idListDonne = Array.from(this.playersIdList);
-    // var idListRecu = Array.from(idListDonne);
-    // while(idListDonne.length > 0){
-    //   idListDonne = this.random(idListDonne);
-    //   for(var i = 0; i < idListDonne.length; i++){
-    //     if((idListRecu[i] != idListDonne[i]) && (this.players[idListDonne[i]].other != idListRecu[i])){
-    //       this.players[idListRecu[i]].setOther(idListDonne[i]);
-    //       console.log(idListDonne[i], "est affecté à ", idListRecu[i]);
-    //       idListDonne.splice(i,1);
-    //       idListRecu.splice(i,1);
-    //     }
-    //   }
-    // }
-    
+    this.valid = true;
     var idListDonne = Array.from(this.playersIdList);
     var idListRecu = Array.from(idListDonne);
+    idListDonne = this.random(idListDonne);
     while(idListDonne.length > 0){
-      idListDonne = this.random(idListDonne);
       for(var i = 0; i < idListDonne.length; i++){
+        if(idListRecu[i] == idListDonne[i]){
+          this.valid = false;
+        }
         this.players[idListRecu[i]].setOther(this.players[idListDonne[i]].getName());
-        console.log(idListDonne[i], "est affecté à ", idListRecu[i]);
         idListDonne.splice(i,1);
         idListRecu.splice(i,1);
       }
     }
     console.log(this.players);
+    console.log(this.valid);
 
   }
 

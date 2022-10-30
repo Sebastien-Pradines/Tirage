@@ -14,7 +14,7 @@
 
   <div id="nameDiv">
     <input type="text" id="name" name="name">
-    <button id="nameButton">Valider</button>
+    <button id="nameButton">Tirage au sort de Nöel</button>
   </div>
   <div id="zone" class="hidden">
     <div>
@@ -34,7 +34,7 @@
           <div class="contents" id="resultat">Resultat</div>
         </div>
       
-        <button id="button">Open</button>
+        <button id="button">Ouvrir</button>
       </div>
       <script>
         const button = document.getElementById('button');
@@ -44,7 +44,7 @@
     
         button.addEventListener('click', (event) => {
           box.classList.toggle('open');
-          event.target.innerText = (open ? 'Open' : 'Close' );
+          event.target.innerText = (open ? 'Ouvrir' : 'Fermer' );
           open = !open;
         });
     

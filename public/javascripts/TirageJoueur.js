@@ -34,7 +34,6 @@
     }
 
     resultat(){
-      console.log("1");
       this.socket.emit('result');
     }
 

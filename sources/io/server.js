@@ -4,10 +4,8 @@
  * Import ExampleGame class.
  */
 
-const ExampleGame = require('../engine/ExampleGame');
 const Tirage = require('../engine/ExampleTirage');
 
-const game = new ExampleGame('Example');
 const tirage = new Tirage('Testing');
 
 /**
@@ -15,7 +13,6 @@ const tirage = new Tirage('Testing');
  */
 
 const socketio = require('socket.io');
-const Game = require('../engine/ExampleTirage');
 
 function io(server) {
 
@@ -23,9 +20,6 @@ function io(server) {
 
   io.on('connection', (socket) => {
 
-    socket.on('register', () => game.register(socket.id));
-
-    socket.on('grow', () => game.grow(socket.id));
 
     socket.on('disconnect', () => { 
       tirage.delist(socket.id);
