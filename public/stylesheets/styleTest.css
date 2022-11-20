@@ -1,4 +1,12 @@
 body{
+  background-image: url(img/wp.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.trueHidden{
+  display: none !important;
 }
 
 .hidden{
@@ -6,8 +14,8 @@ body{
 }
 
 #nameDiv{
-    width: 40%;
-    height: 200px;
+    width: 80%;
+    height: 300px;
     margin: 0 auto;
     padding: 5px;
     display: flex;
@@ -70,7 +78,7 @@ body{
 }
 
 #name{
-    height: 40px;
+    height: 80px;
     width: 100%;
     margin-bottom: 4px;
     border: 2px solid #36395A;
@@ -92,7 +100,7 @@ body{
   cursor: pointer;
   display: inline-flex;
   font-family: "JetBrains Mono",monospace;
-  height: 48px;
+  height: 96px;
   justify-content: center;
   line-height: 1;
   list-style: none;
@@ -108,7 +116,7 @@ body{
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow,transform;
-  font-size: 18px;
+  font-size: 48px;
 }
 
 #nameButton:focus {
