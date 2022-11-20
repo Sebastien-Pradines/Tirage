@@ -37,22 +37,26 @@ class Tirage {
   }
 
   start(){
-    this.valid = true;
-    var idListDonne = Array.from(this.playersIdList);
-    var idListRecu = Array.from(idListDonne);
-    idListDonne = this.random(idListDonne);
-    while(idListDonne.length > 0){
-      for(var i = 0; i < idListDonne.length; i++){
-        if(idListRecu[i] == idListDonne[i]){
-          this.valid = false;
+    this.valid = false;
+    while(this.valid == false){
+      this.valid = true;
+      var idListDonne = Array.from(this.playersIdList);
+      var idListRecu = Array.from(idListDonne);
+      idListDonne = this.random(idListDonne);
+      while(idListDonne.length > 0){
+        for(var i = 0; i < idListDonne.length; i++){
+          if(idListRecu[i] == idListDonne[i]){
+            this.valid = false;
+          }
+          this.players[idListRecu[i]].setOther(this.players[idListDonne[i]].getName());
+          idListDonne.splice(i,1);
+          idListRecu.splice(i,1);
         }
-        this.players[idListRecu[i]].setOther(this.players[idListDonne[i]].getName());
-        idListDonne.splice(i,1);
-        idListRecu.splice(i,1);
       }
+      console.log(this.players);
+      console.log(this.valid);
     }
-    console.log(this.players);
-    console.log(this.valid);
+    
 
   }
 
