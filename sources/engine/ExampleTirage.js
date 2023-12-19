@@ -36,6 +36,7 @@ class Tirage {
     }
   }
 
+  /*
   start(){
     this.valid = false;
     while(this.valid == false){
@@ -57,7 +58,12 @@ class Tirage {
       console.log(this.valid);
     }
     
-
+  }
+  */
+ 
+  start(){
+    this.player[0].setOther(new ExempleJoueur(2,"Hansel et Gretel"));
+    this.player[1].setOther(new ExempleJoueur(3,"Bernard et Bianca"));
   }
 
   random(idList){
