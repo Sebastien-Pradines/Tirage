@@ -60,10 +60,37 @@ class Tirage {
     
   }
   */
- 
+
   start(){
-    this.player[0].setOther(new ExempleJoueur(2,"Hansel et Gretel"));
-    this.player[1].setOther(new ExempleJoueur(3,"Bernard et Bianca"));
+    this.valid = false;
+    while(this.valid == false){
+      this.valid = true;
+      var idListDonne = Array.from(this.playersIdList);
+      var idListRecu = Array.from(idListDonne);
+      idListDonne = this.random(idListDonne);
+      while(idListDonne.length > 0){
+        for(var i = 0; i < idListDonne.length; i++){
+          if(idListRecu[i] == idListDonne[i]){
+            this.valid = false;
+          }
+          if(this.isEven(i)){
+            this.players[idListRecu[i]].setOther("Hansel et Gretel");
+          }
+          else {
+            this.players[idListRecu[i]].setOther("Bernard et Bianca");
+          }
+          idListDonne.splice(i,1);
+          idListRecu.splice(i,1);
+        }
+      }
+      console.log(this.players);
+      console.log(this.valid);
+    }
+
+  }
+
+  isEven(number) {
+    return number % 2 === 0;
   }
 
   random(idList){
