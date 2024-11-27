@@ -36,7 +36,6 @@ class Tirage {
     }
   }
 
-  /*
   start(){
     this.valid = false;
     while(this.valid == false){
@@ -59,8 +58,9 @@ class Tirage {
     }
     
   }
-  */
 
+
+  /*
   start(){
     this.valid = false;
     while(this.valid == false){
@@ -86,8 +86,8 @@ class Tirage {
       console.log(this.players);
       console.log(this.valid);
     }
-
   }
+    */
 
   isEven(number) {
     return number % 2 === 0;
